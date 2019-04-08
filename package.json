@@ -1,0 +1,33 @@
+{
+  "name": "mesh-brain-games",
+  "version": "1.0.0",
+  "description": "Brain Games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meshcherov/project-lvl1-s474.git"
+  },
+  "author": "G Meshcherov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meshcherov/project-lvl1-s474/issues"
+  },
+  "bin": {
+    "brain-games": "dist/bin/brain-games.js"
+  },
+  "homepage": "https://github.com/meshcherov/project-lvl1-s474#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3"
+  },
+  "files": [
+    "dist"
+  ]
+}
