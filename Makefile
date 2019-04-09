@@ -6,3 +6,8 @@ start:
 
 publish:
 				npm publish
+lint:
+			npx eslint .
+
+fixlint:
+			npx eslint . --fix
