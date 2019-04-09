@@ -18,7 +18,8 @@
     "url": "https://github.com/meshcherov/project-lvl1-s474/issues"
   },
   "bin": {
-    "brain-games": "dist/bin/brain-games.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "homepage": "https://github.com/meshcherov/project-lvl1-s474#readme",
   "devDependencies": {
