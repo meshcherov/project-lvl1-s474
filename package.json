@@ -1,10 +1,6 @@
 {
   "name": "mege-brain-games",
-<<<<<<< HEAD
   "version": "1.2.6",
-=======
-  "version": "1.2.4",
->>>>>>> 2b8ea0d57166462f5d2534d5155c334fd30a7a98
   "description": "Brain Games",
   "main": "",
   "scripts": {

@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-import { getName, greet } from '..';
-
-greet();
+import { getName } from '..';
 
 getName();
