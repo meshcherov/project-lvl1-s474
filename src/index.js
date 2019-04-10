@@ -12,6 +12,7 @@ export const getName = () => {
 export const writeRuleOfGame = (rules) => {
   console.log(`${rules} \n`);
 };
+
 const random = () => {
   const minNum = 1;
   const maxNum = 100;
@@ -19,16 +20,21 @@ const random = () => {
   return randomNum;
 };
 
-export const evenGame = () => {
+export const evenGame = (i = 0) => {
   const number = random();
   const correctAnswer = number % 2 ? 'NO' : 'YES';
   console.log(`Question: ${number}`);
   const answer = readlineSync.question('Your answer: ').toUpperCase();
   if (answer !== correctAnswer) {
-    console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}`);
+    console.log(`${answer} is wrong answer ;(. Correct answer was
+      ${correctAnswer}`);
     console.log('Let\'s try again, !');
   } else {
     console.log('Correct!');
-    evenGame();
+    for (let a = i + 1; a < 3;) {
+      evenGame(a);
+      break;
+    }
   }
+  console.log('Congratulations, Name!');
 };
