@@ -6,7 +6,12 @@ export const greet = () => {
 
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}! \n`);
+  const name = userName;
+  return name;
+};
+
+export const greetingUser = () => {
+  console.log(`Hello, ${getName()}! \n`);
 };
 
 export const writeRuleOfGame = (rules) => {
@@ -28,13 +33,15 @@ export const evenGame = (i = 0) => {
   if (answer !== correctAnswer) {
     console.log(`${answer} is wrong answer ;(. Correct answer was
       ${correctAnswer}`);
-    console.log('Let\'s try again, !');
+    console.log('Let\'s try again, Name!');
   } else {
     console.log('Correct!');
     for (let a = i + 1; a < 3;) {
       evenGame(a);
       break;
     }
+    if (i === 2) {
+      console.log(`Congratulations, ${getName()}!`);
+    }
   }
-  console.log('Congratulations, Name!');
 };
