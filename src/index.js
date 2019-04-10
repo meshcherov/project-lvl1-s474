@@ -6,12 +6,9 @@ export const greet = () => {
 
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}! \n`);
   const name = userName;
   return name;
-};
-
-export const greetingUser = () => {
-  console.log(`Hello, ${getName()}! \n`);
 };
 
 export const writeRuleOfGame = (rules) => {
