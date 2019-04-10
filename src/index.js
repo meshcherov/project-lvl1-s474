@@ -1,44 +1,38 @@
 import readlineSync from 'readline-sync';
 
-export const greet = () => {
-  console.log('Welcom to the Brain Games!');
-};
+const rules = 'Answer "yes" if number even otherwise answer "no".';
 
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}! \n`);
-  const name = userName;
-  return name;
+  return userName;
 };
 
-export const writeRuleOfGame = (rules) => {
+const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + 1);
+
+const getCorrectAnswer = number => (number % 2 ? 'NO' : 'YES');
+
+export const evenGame = () => {
+  console.log('Welcom to the Brain Games!');
   console.log(`${rules} \n`);
-};
-
-const random = () => {
-  const minNum = 1;
-  const maxNum = 100;
-  const randomNum = Math.floor(Math.random() * (maxNum - minNum) + 1);
-  return randomNum;
-};
-
-export const evenGame = (i = 0) => {
-  const number = random();
-  const correctAnswer = number % 2 ? 'NO' : 'YES';
-  console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer: ').toUpperCase();
-  if (answer !== correctAnswer) {
-    console.log(`${answer} is wrong answer ;(. Correct answer was
-      ${correctAnswer}`);
-    console.log('Let\'s try again, Name!');
-  } else {
-    console.log('Correct!');
-    for (let a = i + 1; a < 3;) {
-      evenGame(a);
-      break;
+  const name = getName();
+  const correctAnswerCounter = 3;
+  const iter = (i) => {
+    if (i === 0) {
+      return console.log(`Congratulations, ${name}!`);
     }
-    if (i === 2) {
-      console.log(`Congratulations, ${getName()}!`);
+    const number = getRandom(1, 100);
+    console.log(`Question: ${number}`);
+    const answer = readlineSync.question('Your answer: ').toUpperCase();
+    const correctAnswer = getCorrectAnswer(number);
+    if (answer === correctAnswer) {
+      console.log('Correct!');
+    } else {
+      console.log(`${answer} is wrong answer ;(. Correct answer was
+        ${correctAnswer}`);
+      return console.log(`Let's try again, ${name}!`);
     }
-  }
+    return iter(i - 1);
+  };
+  return iter(correctAnswerCounter);
 };
