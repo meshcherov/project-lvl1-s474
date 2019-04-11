@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
 
-const rules = 'Answer "yes" if number even otherwise answer "no".';
-
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}! \n`);
@@ -12,7 +10,7 @@ const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNu
 
 const getCorrectAnswer = number => (number % 2 ? 'NO' : 'YES');
 
-export const evenGame = () => {
+export const brainGame = (rules) => {
   console.log('Welcom to the Brain Games!');
   console.log(`${rules} \n`);
   const name = getName();
