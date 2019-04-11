@@ -2,16 +2,16 @@ import { brainGame } from '..';
 
 const calcGame = () => {
   const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + minNum);
-  const rules = 'What is the result of the expression?';
-  const numOne = getRandom(1, 100);
-  const numTwo = getRandom(1, 100);
-  const numMathOperation = getRandom(1, 3);
+  const description = 'What is the result of the expression?';
   const mathOperations = new Map([
     [1, '+'],
     [2, '-'],
     [3, '*'],
     [4, '/'],
   ]);
+  const numOne = getRandom(1, 100);
+  const numTwo = getRandom(1, 100);
+  const numMathOperation = getRandom(1, mathOperations.size);
   const getMathOperation = mathOperations.get(numMathOperation);
   const getcorrectAnswer = () => {
     switch (getMathOperation) {
@@ -36,7 +36,7 @@ const calcGame = () => {
 
   const question = (numOne + getMathOperation + numTwo);
 
-  brainGame(rules, question, correctAnswer.toString());
+  brainGame(description, question, correctAnswer.toString());
 };
 
 export default calcGame;

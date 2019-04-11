@@ -6,9 +6,9 @@ export const getName = () => {
   return userName;
 };
 
-export const brainGame = (rules, question, correctAnswer) => {
+export const brainGame = (description, question, correctAnswer) => {
   console.log('Welcom to the Brain Games!');
-  console.log(`${rules} \n`);
+  console.log(`${description} \n`);
   const name = getName();
   const correctAnswerCounter = 3;
 
@@ -23,8 +23,6 @@ export const brainGame = (rules, question, correctAnswer) => {
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was
         ${correctAnswer}`);
-      console.log(typeof correctAnswer);
-      console.log(typeof answer);
       return console.log(`Let's try again, ${name}!`);
     }
 
