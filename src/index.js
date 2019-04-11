@@ -1,3 +1,4 @@
+// СЕРГЕЙ, Я ЗАПУТАЛСЯ =( ХЕЛП МИ ПЛИЗ
 import readlineSync from 'readline-sync';
 import {
   cons, car, cdr, toString
