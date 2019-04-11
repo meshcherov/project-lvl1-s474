@@ -10,4 +10,4 @@ const evenGame = () => {
   brainGame(rules, conditions, getCorrectAnswer);
 };
 
-export default evenGame();
+export default evenGame;
