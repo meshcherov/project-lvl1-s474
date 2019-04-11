@@ -2,8 +2,8 @@ import { brainGame } from '..';
 
 const rules = 'What is the result of the expression?';
 
-export const calcGame = () => {
+const calcGame = () => {
   brainGame(rules);
 };
 
-export const s = () => true;
+export default calcGame;
