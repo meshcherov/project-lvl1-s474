@@ -6,8 +6,8 @@ const conditions = [1, 100];
 
 const getCorrectAnswer = number => (number % 2 ? 'NO' : 'YES');
 
-export const evenGame = () => {
+const evenGame = () => {
   brainGame(rules, conditions, getCorrectAnswer);
 };
 
-export const s = () => true;
+export default evenGame();
