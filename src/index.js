@@ -6,11 +6,9 @@ export const getName = () => {
   return userName;
 };
 
-const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + 1);
+export const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + minNum);
 
-const getCorrectAnswer = number => (number % 2 ? 'NO' : 'YES');
-
-export const brainGame = (rules) => {
+export const brainGame = (rules, conditions, getCorrectAnswer) => {
   console.log('Welcom to the Brain Games!');
   console.log(`${rules} \n`);
   const name = getName();
@@ -19,10 +17,10 @@ export const brainGame = (rules) => {
     if (i === 0) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const number = getRandom(1, 100);
-    console.log(`Question: ${number}`);
+    const question = getRandom(conditions[0], conditions[1]);
+    console.log(`Question: ${question}`);
+    const correctAnswer = getCorrectAnswer(question);
     const answer = readlineSync.question('Your answer: ').toUpperCase();
-    const correctAnswer = getCorrectAnswer(number);
     if (answer === correctAnswer) {
       console.log('Correct!');
     } else {
