@@ -1,4 +1,7 @@
 import readlineSync from 'readline-sync';
+import {
+  cons, car, cdr, toString
+} from 'hexlet-pairs';
 
 export const getName = () => {
   const userName = readlineSync.question('May I have your name? ');
@@ -17,7 +20,7 @@ export const brainGame = (rules, conditions, getCorrectAnswer) => {
     if (i === 0) {
       return console.log(`Congratulations, ${name}!`);
     }
-    const question = getRandom(conditions[0], conditions[1]);
+    const question = getRandom(car(conditions), cdr(conditions));
     console.log(`Question: ${question}`);
     const correctAnswer = getCorrectAnswer(question);
     const answer = readlineSync.question('Your answer: ').toUpperCase();
