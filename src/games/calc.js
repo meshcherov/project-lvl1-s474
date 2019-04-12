@@ -1,7 +1,8 @@
-import { brainGame } from '..';
+import brainGame from '..';
+import getRandom from '../utils';
+import { cons, car, cdr } from 'hexlet-pairs';
 
 const calcGame = () => {
-  const getRandom = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum) + minNum);
   const description = 'What is the result of the expression?';
   const mathOperations = new Map([
     [1, '+'],
@@ -34,9 +35,13 @@ const calcGame = () => {
 
   const correctAnswer = getcorrectAnswer();
 
-  const question = (numOne + getMathOperation + numTwo);
+  const question = (`${numOne} ${getMathOperation} ${numTwo}`);
 
-  brainGame(description, question, correctAnswer.toString());
+  const gamePair = cons(description, cons(question, correctAnswer.toString()));
+
+  return gamePair;
 };
+
+brainGame(calcGame());
 
 export default calcGame;
