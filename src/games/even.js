@@ -1,6 +1,6 @@
 import brainGame from '..';
 import getRandom from '../utils';
-import { cons, car, cdr } from 'hexlet-pairs';
+import { cons } from 'hexlet-pairs';
 
 
 const evenGame = () => {

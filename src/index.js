@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { cons, car, cdr } from 'hexlet-pairs';
+import { car, cdr } from 'hexlet-pairs';
 
 const brainGame = (game) => {
   const description = car(game());
@@ -14,8 +14,9 @@ const brainGame = (game) => {
     if (i === 0) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    const question = car(cdr(game()));
-    const correctAnswer = cdr(cdr(game()));
+    const getQuestionAndAnswer = game();
+    const question = car(cdr(getQuestionAndAnswer));
+    const correctAnswer = cdr(cdr(getQuestionAndAnswer));
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ').toUpperCase();
     if (answer === correctAnswer) {
