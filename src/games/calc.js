@@ -14,7 +14,7 @@ const calcGame = () => {
   const numTwo = getRandom(1, 100);
   const numMathOperation = getRandom(1, mathOperations.size);
   const getMathOperation = mathOperations.get(numMathOperation);
-  const getcorrectAnswer = () => {
+  const getCorrectAnswer = () => {
     switch (getMathOperation) {
       case '+':
         return numOne + numTwo;
@@ -29,11 +29,11 @@ const calcGame = () => {
         return numOne / numTwo;
 
       default:
-        return undefined;
+        return 'Error operation';
     }
   };
 
-  const correctAnswer = getcorrectAnswer();
+  const correctAnswer = getCorrectAnswer();
 
   const question = (`${numOne} ${getMathOperation} ${numTwo}`);
 
