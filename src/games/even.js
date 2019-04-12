@@ -7,15 +7,17 @@ const evenGame = () => {
 
   const description = 'Answer "yes" if number even otherwise answer "no".';
 
-  const pair = cons(1, 100);
-
-  const question = getRandom(car(pair), cdr(pair));
+  const question = getRandom(1, 100);
 
   const isEvenNum = num => num % 2 === 0;
 
   const correctAnswer = isEvenNum(question) ? 'YES' : 'NO';
 
-  brainGame(description, question, correctAnswer);
+  const gamePair = cons(description, cons(question, correctAnswer));
+
+  return gamePair;
 };
+
+brainGame(evenGame());
 
 export default evenGame;
