@@ -17,6 +17,6 @@ const evenGame = () => {
   return gamePair;
 };
 
-brainGame(evenGame());
+brainGame(evenGame);
 
 export default evenGame;
