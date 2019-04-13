@@ -2,6 +2,18 @@ import brainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const getNumberRow = (num, numberRowLength, progressionDifference) => {
+  const arrayNumRow = [];
+  let startingNum = num;
+  let length = numberRowLength;
+  while (length > 0) {
+    arrayNumRow.push(startingNum);
+    startingNum += progressionDifference;
+    length -= 1;
+  }
+  return arrayNumRow;
+};
+
 const progressionGame = () => {
   const description = 'What number is missing in the progression?';
 
@@ -11,19 +23,7 @@ const progressionGame = () => {
 
   const progressionDifference = getRandom(1, 5);
 
-  const getNumberRow = (num) => {
-    const arrayNumRow = [];
-    let startingNum = num;
-    let length = numberRowLength;
-    while (length > 0) {
-      arrayNumRow.push(startingNum);
-      startingNum += progressionDifference;
-      length -= 1;
-    }
-    return arrayNumRow;
-  };
-
-  const numberRow = getNumberRow(startingRowNumber);
+  const numberRow = getNumberRow(startingRowNumber, numberRowLength, progressionDifference);
 
   const secretNumber = getRandom(0, numberRow.length);
 
