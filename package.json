@@ -1,11 +1,11 @@
 {
   "name": "mege-brain-games",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Brain Games",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "build": "NODE_ENV=production sudo babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
   "repository": {
