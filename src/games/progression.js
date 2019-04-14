@@ -2,33 +2,28 @@ import brainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
-const getNumberRow = (num, numberRowLength, progressionDifference) => {
-  const arrayNumRow = [];
+const description = 'What number is missing in the progression?';
+
+const getArrayNumberRow = (num, numberRowLength, diff) => {
+  const arrayNumberRow = [];
   let startingNum = num;
   let length = numberRowLength;
   while (length > 0) {
-    arrayNumRow.push(startingNum);
-    startingNum += progressionDifference;
+    arrayNumberRow.push(startingNum);
+    startingNum += diff;
     length -= 1;
   }
-  return arrayNumRow;
+  return arrayNumberRow;
 };
 
-const progressionGame = () => {
-  const description = 'What number is missing in the progression?';
-
+const getProgressionGame = () => {
   const numberRowLength = 10;
-
   const startingRowNumber = getRandom(1, 50);
-
-  const progressionDifference = getRandom(1, 5);
-
-  const numberRow = getNumberRow(startingRowNumber, numberRowLength, progressionDifference);
-
+  const diff = getRandom(1, 5);
+  const numberRow = getArrayNumberRow(startingRowNumber, numberRowLength, diff);
   const secretNumber = getRandom(0, numberRow.length);
 
   const getCorrectAnswer = () => numberRow[secretNumber];
-
   const correctAnswer = getCorrectAnswer();
 
   const questionArr = () => {
@@ -38,11 +33,10 @@ const progressionGame = () => {
 
   const question = `${questionArr()}`;
 
-  const gamePair = cons(description, cons(question, correctAnswer.toString()));
-
-  return gamePair;
+  const pairQuestionAndAnswer = cons(question, correctAnswer);
+  return pairQuestionAndAnswer;
 };
 
-brainGame(progressionGame);
+brainGame(getProgressionGame, description);
 
-export default progressionGame;
+export default getProgressionGame;

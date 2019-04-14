@@ -2,7 +2,9 @@ import brainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
-const getCorrectAnswer = (numOne, numTwo) => {
+const description = 'Find the greatest common divisor of given numbers.';
+
+const getGreatestCommonDivider = (numOne, numTwo) => {
   if (numOne === numTwo) {
     return numOne;
   }
@@ -26,22 +28,16 @@ const getCorrectAnswer = (numOne, numTwo) => {
 };
 
 const gcdGame = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-
   const numOne = getRandom(1, 25);
-
   const numTwo = getRandom(1, 25);
-
-
-  const correctAnswer = getCorrectAnswer(numOne, numTwo);
+  const correctAnswer = getGreatestCommonDivider(numOne, numTwo);
 
   const question = `${numOne} ${numTwo}`;
 
-  const gamePair = cons(description, cons(question, correctAnswer.toString()));
-
-  return gamePair;
+  const pairQuestionAndAnswer = cons(question, correctAnswer);
+  return pairQuestionAndAnswer;
 };
 
-brainGame(gcdGame);
+brainGame(gcdGame, description);
 
 export default gcdGame;

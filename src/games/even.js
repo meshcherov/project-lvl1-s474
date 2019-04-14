@@ -2,21 +2,18 @@ import brainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const description = 'Answer "yes" if number even otherwise answer "no".';
 
 const evenGame = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no".';
-
-  const question = getRandom(1, 100);
+  const question = (getRandom(1, 100)).toString();
 
   const isEvenNum = num => num % 2 === 0;
+  const correctAnswer = isEvenNum(question) ? 'yes' : 'no';
 
-  const correctAnswer = isEvenNum(question) ? 'YES' : 'NO';
-
-  const gamePair = cons(description, cons(question, correctAnswer));
-
-  return gamePair;
+  const pairQuestionAndAnswer = cons(question, correctAnswer);
+  return pairQuestionAndAnswer;
 };
 
-brainGame(evenGame);
+brainGame(evenGame, description);
 
 export default evenGame;

@@ -2,6 +2,8 @@ import brainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
+const description = 'What is the result of the expression?';
+
 const getCorrectAnswer = (numOne, numTwo, getMathOperation) => {
   switch (getMathOperation) {
     case '+':
@@ -22,7 +24,6 @@ const getCorrectAnswer = (numOne, numTwo, getMathOperation) => {
 };
 
 const calcGame = () => {
-  const description = 'What is the result of the expression?';
   const mathOperations = new Map([
     [1, '+'],
     [2, '-'],
@@ -33,16 +34,14 @@ const calcGame = () => {
   const numTwo = getRandom(1, 100);
   const numMathOperation = getRandom(1, mathOperations.size);
   const getMathOperation = mathOperations.get(numMathOperation);
-
   const correctAnswer = getCorrectAnswer(numOne, numTwo, getMathOperation);
 
   const question = (`${numOne} ${getMathOperation} ${numTwo}`);
 
-  const gamePair = cons(description, cons(question, correctAnswer.toString()));
-
-  return gamePair;
+  const pairQuestionAndAnswer = cons(question, correctAnswer);
+  return pairQuestionAndAnswer;
 };
 
-brainGame(calcGame);
+brainGame(calcGame, description);
 
 export default calcGame;
