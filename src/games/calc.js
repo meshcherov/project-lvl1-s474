@@ -1,5 +1,5 @@
 import getBrainGame from '..';
-import getRandom from '../utils';
+import { getRandom } from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What is the result of the expression?';
@@ -23,25 +23,25 @@ const getCorrectAnswer = (numOne, numTwo, getMathOperation) => {
   }
 };
 
-const calcGame = () => {
-  const mathOperations = new Map([
-    [1, '+'],
-    [2, '-'],
-    [3, '*'],
-    [4, '/'],
-  ]);
-  const numOne = getRandom(1, 100);
-  const numTwo = getRandom(1, 100);
-  const numMathOperation = getRandom(1, mathOperations.size);
-  const getMathOperation = mathOperations.get(numMathOperation);
-  const correctAnswer = getCorrectAnswer(numOne, numTwo, getMathOperation);
+const getCalcGame = () => {
+  const getQuestionAndAnswer = () => {
+    const mathOperations = new Map([
+      [1, '+'],
+      [2, '-'],
+      [3, '*'],
+      [4, '/'],
+    ]);
+    const numOne = getRandom(1, 100);
+    const numTwo = getRandom(1, 100);
+    const numMathOperation = getRandom(1, mathOperations.size);
+    const getMathOperation = mathOperations.get(numMathOperation);
+    const correctAnswer = getCorrectAnswer(numOne, numTwo, getMathOperation).toString();
 
-  const question = (`${numOne} ${getMathOperation} ${numTwo}`);
+    const question = `${numOne} ${getMathOperation} ${numTwo}`;
 
-  const pairQuestionAndAnswer = cons(question, correctAnswer);
-  return pairQuestionAndAnswer;
+    return cons(question, correctAnswer);
+  };
+  getBrainGame(getQuestionAndAnswer, description);
 };
 
-getBrainGame(calcGame, description);
-
-export default calcGame;
+export default getCalcGame;

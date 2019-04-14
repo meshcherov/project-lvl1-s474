@@ -23,8 +23,7 @@ const getBrainGame = (game, descriptionGame) => {
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was
         ${correctAnswer}`);
-      console.log(`Let's try again, ${userName}!`);
-      return false;
+      return console.log(`Let's try again, ${userName}!`);
     }
 
     return iter(i - 1);

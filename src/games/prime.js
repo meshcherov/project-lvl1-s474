@@ -8,7 +8,7 @@ const isPrimeNum = (num) => {
   if (num < 2) {
     return false;
   }
-  for (let i = 3; i < num; i += 1) {
+  for (let i = 3; i <= num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -16,14 +16,15 @@ const isPrimeNum = (num) => {
   return true;
 };
 
-const primeGame = () => {
-  const question = getRandomNumberToString(1, 50);
-  const correctAnswer = isPrimeNum(question) ? 'yes' : 'no';
+const getPrimeGame = () => {
+  const getQuestionAndAnswer = () => {
+    const question = getRandomNumberToString(1, 50);
+    const correctAnswer = isPrimeNum(question) ? 'yes' : 'no';
 
-  const pairQuestionAndAnswer = cons(question, correctAnswer);
-  return pairQuestionAndAnswer;
+    return cons(question, correctAnswer);
+  };
+  getBrainGame(getQuestionAndAnswer, description);
 };
 
-getBrainGame(primeGame, description);
 
-export default primeGame;
+export default getPrimeGame;

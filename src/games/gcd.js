@@ -7,17 +7,17 @@ const description = 'Find the greatest common divisor of given numbers.';
 const getGreatestCommonDivider = (numOne, numTwo) => (numOne !== 0
   ? getGreatestCommonDivider(numTwo % numOne, numOne) : numTwo);
 
-const gcdGame = () => {
-  const numOne = getRandom(1, 25);
-  const numTwo = getRandom(1, 25);
-  const correctAnswer = (getGreatestCommonDivider(numOne, numTwo)).toString();
+const getGcdGame = () => {
+  const getQuestionAndAnswer = () => {
+    const numOne = getRandom(1, 25);
+    const numTwo = getRandom(1, 25);
+    const correctAnswer = (getGreatestCommonDivider(numOne, numTwo)).toString();
 
-  const question = `${numOne} ${numTwo}`;
+    const question = `${numOne} ${numTwo}`;
 
-  const pairQuestionAndAnswer = cons(question, correctAnswer);
-  return pairQuestionAndAnswer;
+    return cons(question, correctAnswer);
+  };
+  getBrainGame(getQuestionAndAnswer, description);
 };
 
-getBrainGame(gcdGame, description);
-
-export default gcdGame;
+export default getGcdGame;
