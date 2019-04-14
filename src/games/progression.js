@@ -1,34 +1,44 @@
-import brainGame from '..';
+import getBrainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'What number is missing in the progression?';
 
-const getArrayNumberRow = (num, numberRowLength, diff) => {
+const getNumberSeries = (startingSeriesNumber, seriesLength, diff) => {
+  const arithmeticProgressionSeries = [];
+  let minNumber = startingSeriesNumber;
+  for (let i = 0; i < seriesLength; i += 1) {
+    arithmeticProgressionSeries[i] = minNumber;
+    minNumber += diff;
+  }
+  return arithmeticProgressionSeries;
+  /*
   const arrayNumberRow = [];
   let startingNum = num;
-  let length = numberRowLength;
+  let maxLength = length;
   while (length > 0) {
     arrayNumberRow.push(startingNum);
     startingNum += diff;
-    length -= 1;
+    maxLength -= 1;
   }
   return arrayNumberRow;
+  */
 };
 
-const getProgressionGame = () => {
-  const numberRowLength = 10;
-  const startingRowNumber = getRandom(1, 50);
-  const diff = getRandom(1, 5);
-  const numberRow = getArrayNumberRow(startingRowNumber, numberRowLength, diff);
-  const secretNumber = getRandom(0, numberRow.length);
+const length = 10;
 
-  const getCorrectAnswer = () => numberRow[secretNumber];
-  const correctAnswer = getCorrectAnswer();
+const getProgressionGame = () => {
+  const startingSeriesNumber = getRandom(1, 50);
+  const diff = getRandom(1, 5);
+  const numberSeries = getNumberSeries(startingSeriesNumber, length, diff);
+  const secretNumber = getRandom(0, numberSeries.length);
+
+  const getCorrectAnswer = () => numberSeries[secretNumber];
+  const correctAnswer = (getCorrectAnswer()).toString();
 
   const questionArr = () => {
-    numberRow[secretNumber] = '..';
-    return numberRow;
+    numberSeries[secretNumber] = '..';
+    return numberSeries;
   };
 
   const question = `${questionArr()}`;
@@ -37,6 +47,6 @@ const getProgressionGame = () => {
   return pairQuestionAndAnswer;
 };
 
-brainGame(getProgressionGame, description);
+getBrainGame(getProgressionGame, description);
 
 export default getProgressionGame;

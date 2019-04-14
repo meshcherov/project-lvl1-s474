@@ -1,4 +1,4 @@
-import brainGame from '..';
+import getBrainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
@@ -42,6 +42,6 @@ const calcGame = () => {
   return pairQuestionAndAnswer;
 };
 
-brainGame(calcGame, description);
+getBrainGame(calcGame, description);
 
 export default calcGame;
