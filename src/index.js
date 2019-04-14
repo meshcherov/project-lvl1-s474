@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from 'hexlet-pairs';
 
-const getBrainGame = (game, descriptionGame) => {
+const correctAnswerCounter = 3;
+
+const playBrainGame = (getGame, descriptionGame) => {
   console.log('Welcom to the Brain Games!');
   console.log(`${descriptionGame} \n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}! \n`);
 
-  const correctAnswerCounter = 3;
-
   const iter = (i) => {
     if (i === 0) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    const getQuestionAndAnswer = game();
+    const getQuestionAndAnswer = getGame();
     const question = car(getQuestionAndAnswer);
     const correctAnswer = cdr(getQuestionAndAnswer);
     console.log(`Question: ${question}`);
@@ -32,4 +32,4 @@ const getBrainGame = (game, descriptionGame) => {
   return iter(correctAnswerCounter);
 };
 
-export default getBrainGame;
+export default playBrainGame;

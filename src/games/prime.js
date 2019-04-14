@@ -1,4 +1,4 @@
-import getBrainGame from '..';
+import playBrainGame from '..';
 import { getRandomNumberToString } from '../utils';
 import { cons } from 'hexlet-pairs';
 
@@ -23,7 +23,7 @@ const getPrimeGame = () => {
 
     return cons(question, correctAnswer);
   };
-  getBrainGame(getQuestionAndAnswer, description);
+  playBrainGame(getQuestionAndAnswer, description);
 };
 
 

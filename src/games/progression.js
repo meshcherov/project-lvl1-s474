@@ -1,4 +1,4 @@
-import getBrainGame from '..';
+import playBrainGame from '..';
 import getRandom from '../utils';
 import { cons } from 'hexlet-pairs';
 
@@ -35,7 +35,7 @@ const getProgressionGame = () => {
 
     return cons(question, correctAnswer);
   };
-  getBrainGame(getQuestionAndAnswer, description);
+  playBrainGame(getQuestionAndAnswer, description);
 };
 
 
