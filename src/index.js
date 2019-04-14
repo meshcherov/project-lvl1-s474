@@ -11,7 +11,8 @@ const playBrainGame = (getGame, descriptionGame) => {
 
   const iter = (i) => {
     if (i === 0) {
-      return console.log(`Congratulations, ${userName}!`);
+      console.log(`Congratulations, ${userName}!`);
+      return;
     }
     const getQuestionAndAnswer = getGame();
     const question = car(getQuestionAndAnswer);
@@ -23,10 +24,11 @@ const playBrainGame = (getGame, descriptionGame) => {
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was
         ${correctAnswer}`);
-      return console.log(`Let's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
 
-    return iter(i - 1);
+    iter(i - 1);
   };
 
   return iter(correctAnswerCounter);
