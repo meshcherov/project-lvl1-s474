@@ -1,5 +1,5 @@
 import getBrainGame from '..';
-import getRandom from '../utils';
+import { getRandomNumberToString } from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -17,7 +17,7 @@ const isPrimeNum = (num) => {
 };
 
 const primeGame = () => {
-  const question = (getRandom(1, 50).toString());
+  const question = getRandomNumberToString(1, 50);
   const correctAnswer = isPrimeNum(question) ? 'yes' : 'no';
 
   const pairQuestionAndAnswer = cons(question, correctAnswer);
