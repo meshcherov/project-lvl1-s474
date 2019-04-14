@@ -10,6 +10,9 @@
 ```Bash
 sudo npm i -g mege-brain-games
 ```
+#### Демо ####
+[![asciicast](https://asciinema.org/a/NiPP0PS4R4buOGJyskNZLq1Ic.svg)](https://asciinema.org/a/NiPP0PS4R4buOGJyskNZLq1Ic)
+
 ## Игры ##
 ### 1. Проверка на четность. ###
 #### Описание ####
@@ -19,6 +22,7 @@ sudo npm i -g mege-brain-games
 brain-even
 ```
 #### Демо ####
+[![asciicast](https://asciinema.org/a/hOuDVJuYpy1sJj6WXFl9GAZZ0.svg)](https://asciinema.org/a/hOuDVJuYpy1sJj6WXFl9GAZZ0)
 
 ### 2. Калькулятор. ###
 #### Описание ####
@@ -28,6 +32,7 @@ brain-even
 brain-calc
 ```
 #### Демо ####
+[![asciicast](https://asciinema.org/a/GoNCO7gqC4IkRxAnk9tBs1HBj.svg)](https://asciinema.org/a/GoNCO7gqC4IkRxAnk9tBs1HBj)
 
 ### 3. Наибольший общий делитель (НОД). ###
 #### Описание ####
@@ -37,6 +42,7 @@ brain-calc
 brain-gcd
 ```
 #### Демо ####
+[![asciicast](https://asciinema.org/a/XPDV26bNRsSijlbLkZZeqmpBr.svg)](https://asciinema.org/a/XPDV26bNRsSijlbLkZZeqmpBr)
 
 ### 4. Арифметическая прогрессия. ###
 #### Описание ####
@@ -46,6 +52,7 @@ brain-gcd
 brain-progression
 ```
 #### Демо ####
+[![asciicast](https://asciinema.org/a/LXFzqRnYarpAogORKgHV6KFWj.svg)](https://asciinema.org/a/LXFzqRnYarpAogORKgHV6KFWj)
 
 ### 5. Простое ли число. ###
 #### Описание ####
@@ -55,3 +62,4 @@ brain-progression
 brain-prime
 ```
 #### Демо ####
+[![asciicast](https://asciinema.org/a/ZGELQqtoaoUERzsJFYGFsMlS9.svg)](https://asciinema.org/a/ZGELQqtoaoUERzsJFYGFsMlS9)
