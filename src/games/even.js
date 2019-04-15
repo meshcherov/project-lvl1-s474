@@ -11,7 +11,6 @@ const getEvenGame = () => {
     const question = getRandomNumberToString(1, 100);
 
     const correctAnswer = isEven(question) ? 'yes' : 'no';
-
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);

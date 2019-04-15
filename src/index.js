@@ -5,9 +5,9 @@ const correctAnswerCounter = 3;
 
 const playBrainGame = (getGame, descriptionGame) => {
   console.log('Welcom to the Brain Games!');
-  console.log(`${descriptionGame} \n`);
+  console.log(`${descriptionGame}\n`);
   const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}! \n`);
+  console.log(`Hello, ${userName}!\n`);
 
   const iter = (i) => {
     if (i === 0) {
@@ -31,7 +31,7 @@ const playBrainGame = (getGame, descriptionGame) => {
     iter(i - 1);
   };
 
-  return iter(correctAnswerCounter);
+  iter(correctAnswerCounter);
 };
 
 export default playBrainGame;

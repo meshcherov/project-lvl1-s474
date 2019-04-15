@@ -1,5 +1,5 @@
 import playBrainGame from '..';
-import getRandom from '../utils';
+import { getRandom } from '../utils';
 import { cons } from 'hexlet-pairs';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -14,7 +14,6 @@ const getGcdGame = () => {
     const correctAnswer = (getGreatestCommonDivider(numOne, numTwo)).toString();
 
     const question = `${numOne} ${numTwo}`;
-
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);

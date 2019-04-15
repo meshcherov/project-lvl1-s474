@@ -20,7 +20,6 @@ const getPrimeGame = () => {
   const getQuestionAndAnswer = () => {
     const question = getRandomNumberToString(1, 50);
     const correctAnswer = isPrimeNum(question) ? 'yes' : 'no';
-
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);

@@ -25,20 +25,14 @@ const getCorrectAnswer = (numOne, numTwo, getMathOperation) => {
 
 const getCalcGame = () => {
   const getQuestionAndAnswer = () => {
-    const mathOperations = new Map([
-      [1, '+'],
-      [2, '-'],
-      [3, '*'],
-      [4, '/'],
-    ]);
+    const mathOperations = ['+', '-', '*', '/'];
     const numOne = getRandom(1, 100);
     const numTwo = getRandom(1, 100);
-    const numMathOperation = getRandom(1, mathOperations.size);
-    const getMathOperation = mathOperations.get(numMathOperation);
+    const numMathOperation = getRandom(0, mathOperations.length - 1);
+    const getMathOperation = mathOperations[numMathOperation];
     const correctAnswer = getCorrectAnswer(numOne, numTwo, getMathOperation).toString();
 
     const question = `${numOne} ${getMathOperation} ${numTwo}`;
-
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);
