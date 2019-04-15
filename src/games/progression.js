@@ -6,10 +6,8 @@ const description = 'What number is missing in the progression?';
 
 const getNumberProgression = (startingProgressionNumber, ProgressionLength, diff) => {
   const arithmeticProgression = [];
-  let minNumber = startingProgressionNumber;
   for (let i = 0; i < ProgressionLength; i += 1) {
-    arithmeticProgression[i] = minNumber;
-    minNumber += diff;
+    arithmeticProgression[i] = startingProgressionNumber + i * diff;
   }
   return arithmeticProgression;
 };
