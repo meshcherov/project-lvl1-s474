@@ -4,7 +4,7 @@ import { cons } from 'hexlet-pairs';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const isPrimeNum = (num) => {
+const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
@@ -19,7 +19,7 @@ const isPrimeNum = (num) => {
 const getPrimeGame = () => {
   const getQuestionAndAnswer = () => {
     const question = getRandomNumberToString(1, 50);
-    const correctAnswer = isPrimeNum(question) ? 'yes' : 'no';
+    const correctAnswer = isPrime(question) ? 'yes' : 'no';
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);
