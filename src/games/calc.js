@@ -29,10 +29,10 @@ const getCalcGame = () => {
     const numOne = getRandom(1, 100);
     const numTwo = getRandom(1, 100);
     const numMathOperation = getRandom(0, mathOperations.length - 1);
-    const getMathOperation = mathOperations[numMathOperation];
-    const correctAnswer = getCorrectAnswer(numOne, numTwo, getMathOperation).toString();
+    const mathOperation = mathOperations[numMathOperation];
+    const correctAnswer = getCorrectAnswer(numOne, numTwo, mathOperation).toString();
 
-    const question = `${numOne} ${getMathOperation} ${numTwo}`;
+    const question = `${numOne} ${mathOperation} ${numTwo}`;
     return cons(question, correctAnswer);
   };
   playBrainGame(getQuestionAndAnswer, description);
